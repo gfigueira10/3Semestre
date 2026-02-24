@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+header{
+    width: 100%;
+    height: 100px;
+    /* border: 1px solid black; */
+}
+
+.layout-grid{
+    margin: 0 auto;
+    width: 1200px;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.header-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header img{
+    width: 140px;
+    /* border: 1px solid green; */
+}
+
+
+header nav{
+    display: flex;
+    /* border: 1px solid green; */
+    justify-content: space-around;
+    align-items: center;
+    width: 330px;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* BANNER */
+.banner{
+    position: relative;
+    width: 100%;
+    /* height: 500px; */
+    border: 2px solid green;
+}
+
+.banner img{
+    /*  position: relative; */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.banner a{
+    position: absolute;
+    display: flex;
+    top: calc((50% - 45px /2) + 100px);
+    left: calc(50% - 155px /2);
+    justify-content: center;
+    align-items: center;
+    width: 155px;
+    height: 45px;
+    background-color: #444;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+/* Reason to Use */
+.reason-to-use{ 
+border: 2px solid blue;
+height: 500px;
+
+display: flex;
+}
+
+.reason-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reason-to-use .reason-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    height: 300px;
+}
+
+.reason-to-use .reason-card .Imagem{
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.reason-to-use .reason-card h2{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.reason-to-use .reason-card p{
+    color: grey;
+}

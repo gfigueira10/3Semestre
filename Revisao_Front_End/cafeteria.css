@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+background-color: #F9ECE3;
+width: 100%;
+
+display: flex;
+justify-content: center;
+}
+
+header
+{
+/* border: 1px solid red; */
+display: flex;
+width: 80%;
+
+background-color: #FAEEE8;
+justify-content: space-around;
+align-items: center;
+
+font-family: 'Courier New', Courier, monospace;
+}
+
+.layout-grid
+{
+display: flex;
+justify-content: space-around;
+align-items: center;
+width: 100%;
+
+gap: 20px;
+}
+
+
