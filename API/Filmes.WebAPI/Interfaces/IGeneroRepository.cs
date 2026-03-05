@@ -11,5 +11,4 @@ public interface IGeneroRepository
     List<Genero> Listar();
     void Deletar(Guid id);
     Genero BuscarPorId(Guid id);
-    void Cadastrar(object novoGenero);
 }
