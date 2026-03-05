@@ -1,14 +1,9 @@
 using Filmes.WebAPI.BdContextFilme;
 using Filmes.WebAPI.Interfaces;
-using Filmes.WebAPI.Models;
 using Filmes.WebAPI.Repositories;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
-using System;
-using System.Runtime.CompilerServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
