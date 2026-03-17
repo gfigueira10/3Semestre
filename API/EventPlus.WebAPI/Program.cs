@@ -2,6 +2,7 @@ using EventPlus.WebAPI.BdContextEvent;
 using EventPlus.WebAPI.Interfaces;
 using EventPlus.WebAPI.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -18,6 +19,51 @@ builder.Services.AddOpenApi();
 
 //Registrar os repositorios (Injecao de Dependencia)
 builder.Services.AddScoped<ITipoEventoRepository, TipoEventoRepository>();
+
+builder.Services.AddScoped<ITipoUsuarioRepository, TipoUsuarioRepository>();
+
+builder.Services.AddScoped<IInstituicaoRepository, InstituicaoRepository>();
+
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+
+builder.Services.AddScoped<IEventoRepository, EventoRepository>();
+
+//Adiciona servico de Jwt Bearer (forma de autentificacao)
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultChallengeScheme = "JwtBearer";
+    options.DefaultAuthenticateScheme = "JwtBearer";
+})
+
+.AddJwtBearer("JwtBearer", options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        //Valida quem esta solicitando
+        ValidateIssuer = true,
+
+        //Valida quem esta recebendo
+        ValidateAudience = true,
+
+        //Define se o tempo de expiracao sera validado
+        ValidateLifetime = true,
+
+        //Forma de criptografia e valida a chave de autenticacao
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("events-chaves-autenticacao-webapi-dev")),
+
+        //Valida o tempo de expiracao do token
+        ClockSkew = TimeSpan.FromMinutes(5),
+
+        //Nome do issue (de onde esta vindo)
+        ValidIssuer = "api_events",
+
+        //Nome do audience (para onde ele esta indo)
+        ValidAudience = "api_events"
+
+    };
+});
+
+
 
 //Adiciona o Swagger
 builder.Services.AddEndpointsApiExplorer();

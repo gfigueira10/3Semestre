@@ -162,3 +162,4 @@ C:\Users\54197202806\Desktop\3Semestre\API\EventPlus.WebAPI\bin\Debug\net10.0\BC
 C:\Users\54197202806\Desktop\3Semestre\API\EventPlus.WebAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\54197202806\Desktop\3Semestre\API\EventPlus.WebAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\54197202806\Desktop\3Semestre\API\EventPlus.WebAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\54197202806\Desktop\3Semestre\API\EventPlus.WebAPI\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
