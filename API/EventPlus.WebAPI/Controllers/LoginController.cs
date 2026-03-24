@@ -38,9 +38,13 @@ public class LoginController : ControllerBase
             //1 - Definir as informacoes(Claims) que serao fornecidas no token (Payload)
             var claims = new[]
             {
-                    new Claim(JwtRegisteredClaimNames.Jti,usuarioBuscado.Senha),
+                    new Claim(JwtRegisteredClaimNames.Name,usuarioBuscado.Nome),
 
                     new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado?.Email!),
+
+                    new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
+
+                    new Claim(ClaimTypes.Role, usuarioBuscado.IdTipoUsuarioNavigation!.Titulo!),
 
                     //new Claim("Claim Personalizada", "Valor da Claim Personalizada")
                 };
